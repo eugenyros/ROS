@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+    <script src="libs/gsap/particles.js" defer></script>
+    <script src="js/app.js" defer></script>
+    <title>Євгеній Рось</title>
+    <style>
+        .work-logo {
+            display: block;
+            margin: 0 auto 10px;
+            width: 6%;
+            height: auto;
+        }
+
+        .work-title {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .gallery-image, .gallery-video {
+            width: 30%;
+            height: auto;
+            margin: 0 auto;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+            box-shadow: 0 0 0px yellow;
+        }
+
+        .gallery-image.active, .gallery-video.active {
+            display: block;
+            opacity: 1;
+            box-shadow: 0 0 15px 5px yellow;
+            animation: neon-flicker 1.5s infinite;
+        }
+
+        @keyframes neon-flicker {
+            0%, 100% {
+                box-shadow: 0 0 15px 5px yellow;
+            }
+            50% {
+                box-shadow: 0 0 25px 10px yellow;
+            }
+        }
+
+        .prev-btn, .next-btn {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .prev-btn:hover, .next-btn:hover {
+            background-color: #555;
+        }
+
+        .gallery {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        a {
+        color: #eafe07;
+        text-decoration: none; /* Видалити підкреслення */
+    }
+    a:hover {
+        text-decoration: underline; /* Підкреслення при наведенні */
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+
+            <header class="main-header">
+                <div class="layers">
+                    <div class="layer__header">
+                        <div class="layers__caption">Євгеній Рось</div>
+                    </div>
+                    <div class="layer layers__base" style="background-image: url(img/layer-base.png);"></div>
+                    <div class="layer layers__middle" style="background-image: url(img/layer-middle.png);"></div>
+                    <canvas class="particles layers__middle" data-swiper-parallax="25%" data-color="#E8DE9A"></canvas>
+                    <div class="layer layers__front" style="background-image: url(img/layer-front.png);"></div>
+                </div>
+            </header>
+
+            <div class="my-works-section">
+                <p><h2>Мої роботи</h2></p>
+                    <div class="main-article__content">
+                        <h2 class="main-article__header">Про мене:</h2>
+
+                <!-- Photoshop Section -->
+                <div class="work-section">
+
+                    <p><h2>Мої роботи</h2></p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Photoshop Logo" class="work-logo">
+                    <div class="gallery">
+                        <button class="prev-btn">&#10094;</button>
+                        <img src="insta Галя Женя Рось.png" class="gallery-image active" alt="Photoshop Work 1">
+                        <img src="s.png" class="gallery-image" alt="Photoshop Work 2">
+                        <img src="did.png" class="gallery-image" alt="Photoshop Work 3">
+                        <img src="Снимок экрана 2024-12-28 в 3.22.36 AM.png" class="gallery-image" alt="Photoshop Work 4">
+                        <img src="Монтажная область 1.png" class="gallery-image" alt="Photoshop Work 5">
+                        <img src="візитка — копия.png" class="gallery-image" alt="Photoshop Work 6">
+                        <img src="візитка2 — копия.png" class="gallery-image" alt="Photoshop Work 7">
+                        <button class="next-btn">&#10095;</button>
+                    </div>
+                </div>
+
+                <!-- Blender Section -->
+                <div class="work-section">
+                    <h3 class="work-title">Мої роботи у Blender</h3>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Blender_logo_no_text.svg/1024px-Blender_logo_no_text.svg.png" alt="Blender Logo" class="work-logo">
+                    <div class="gallery">
+                        <button class="prev-btn">&#10094;</button>
+                        <img src="Visitka.png" class="gallery-image active" alt="Blender Work 1">
+                        <img src="un.png" class="gallery-image" alt="Blender Work 2">
+                        <img src="untitled.png" class="gallery-image" alt="Blender Work 3">
+                        <img src="12.png" class="gallery-image" alt="Blender Work 4">
+                        <img src="dim.png" class="gallery-image" alt="Blender Work 5">
+                        <img src="grip.png" class="gallery-image" alt="Blender Work 6">
+                        <img src="plalm.png" class="gallery-image" alt="Blender Work 7">
+                        <button class="next-btn">&#10095;</button>
+                    </div>
+                </div>
+
+                <!-- HTML/CSS/JS Section -->
+                <div class="work-section">
+                    <h3 class="work-title">Мої роботи у HTML/CSS/JS</h3>
+                    <img src="https://t3.ftcdn.net/jpg/05/27/97/74/360_F_527977463_hcQAYoMqDE17JUYji9J9bVIV6CWMsFuG.png" alt="HTML Logo" class="work-logo">
+                    <div class="gallery">
+                        <button class="prev-btn">&#10094;</button>
+                        <video class="gallery-video active" controls>
+                            <source src="2f.mp4" type="video/mp4">
+                        </video>
+                        <video class="gallery-video" controls>
+                            <source src="1f.mp4" type="video/mp4">
+                        </video>
+                        <video class="gallery-video" controls>
+                            <source src="fanta.mp4" type="video/mp4">
+                        </video>
+                        <video class="gallery-video" controls>
+                            <source src="lol.mp4" type="video/mp4">
+                        </video>
+                        <button class="next-btn">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+
+            <article class="main-article" style="background-image: url(img/dungeon.jpg);">
+                <div class="main-article__content">
+                    <h2 class="main-article__header">Про мене:</h2>
+                    <p class="main-article__paragraph">
+                        <div style="text-align: left;">
+                            
+                        <p>Я професіонал із широким спектром навичок у дизайні, 3D-моделюванні та програмуванні.</p>
+                        <p>🟪Photoshop: Майстерно володію Adobe Photoshop для створення графічного дизайну, редагування фотографій та розробки креативних матеріалів.</p>
+                        <p>🟧Blender: Використовую Blender для 3D-моделювання, створення анімацій та візуалізації.</p>
+                        <p>🟥🟦🟩HTML, CSS, JS: Займаюся розробкою сучасних, адаптивних вебсайтів, використовуючи HTML, CSS і JavaScript.</p>
+                        <p>⬛️Конструктори сайтів: Окрім кодування, маю досвід створення сайтів за допомогою популярних конструкторів,Tilda. Це дозволяє швидко запускати проєкти без шкоди для якості.</p>
+                        <p>❗️Завжди відкритий до нових викликів та проєктів, які дозволять мені ще більше вдосконалити свої вміння та реалізувати ваші ідеї❗️</p>
+                        <p>⛰️Також ви можете підтримати мій новий проект🏔️ <h2> 👉🏻<a href="https://horyzvut.tilda.ws" target="_blank">ГориЗвуть</a></h2></p>
+                </div>
+                <div class="copy">Євгеній Рось❤️</div>
+            </article>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.work-section .gallery').forEach(gallery => {
+            const items = Array.from(gallery.querySelectorAll('.gallery-image, .gallery-video'));
+            let currentIndex = 0;
+
+            const prevBtn = gallery.querySelector('.prev-btn');
+            const nextBtn = gallery.querySelector('.next-btn');
+
+            const updateGallery = () => {
+                items.forEach((item, index) => {
+                    item.classList.toggle('active', index === currentIndex);
+                });
+            };
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                updateGallery();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateGallery();
+            });
+
+            updateGallery();
+        });
+    </script>
+</body>
+</html>
