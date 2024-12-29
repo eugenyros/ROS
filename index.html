@@ -283,6 +283,37 @@
             }
         });
     });
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-image');
+        const closeBtn = document.querySelector('.close-btn');
+
+        // Вибір усіх зображень у галереї
+        const galleryImages = document.querySelectorAll('.gallery-image');
+
+        // Додаємо події для відкриття модального вікна
+        galleryImages.forEach(image => {
+            image.addEventListener('click', () => {
+                modal.style.display = 'flex'; // Відкрити модальне вікно
+                modalImg.src = image.src; // Показати вибране зображення
+                document.body.style.overflow = 'hidden'; // Заборонити прокрутку сторінки
+            });
+        });
+
+        // Закриття модального вікна
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none'; // Сховати модальне вікно
+            document.body.style.overflow = ''; // Повернути прокрутку сторінки
+        });
+
+        // Закриття модального вікна при кліку поза зображенням
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none'; // Сховати модальне вікно
+                document.body.style.overflow = ''; // Повернути прокрутку сторінки
+            }
+        });
+    });
 </script>
 
     </script>
